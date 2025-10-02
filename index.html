@@ -26,16 +26,8 @@
             <p>Olá, sou o Davi, um programador aprendiz em html, css e python.</p>
         </section>
         <section class="projeto">
-            <ul class="projeto">
-                <li class="projetos">
-                    <h3>GitHub customizado</h3>
-                    <p>Link do projeto: <a href="https://github.com/Davioli12" target="_blank">DaviOli12</a></p>
-                </li>
-                <li class="projetos">
-                    <h3>Lembranças de Aurora</h3>
-                    <p>Link do projeto: <a href="https://github.com/Davioli12/Lembrancas-Aurora"
-                            target="_blank">Lembrancas-Aurora</a></p>
-                </li>
+            <ul class="projeto" id="lista-projetos">
+                <!-- Projetos serão carregados via JS -->
             </ul>
         </section>
         <section class="linguagens">
@@ -64,5 +56,24 @@
             <p class="message">"Transformando café em código desde... sempre ☕"</p>
         </div>
     </footer>
+    <script>
+        fetch('./src/data/projetos.json')
+            .then(response => response.json())
+            .then(projetos => {
+                const lista = document.getElementById('lista-projetos');
+                projetos.forEach(proj => {
+                    const li = document.createElement('li');
+                    li.className = 'projetos';
+                    li.innerHTML = `
+                        <h3>${proj.nome}</h3>
+                        <p>Link do projeto: <a href="${proj.link}" target="_blank">${proj.descricao}</a></p>
+                    `;
+                    lista.appendChild(li);
+                });
+            })
+            .catch(err => {
+                document.getElementById('lista-projetos').innerHTML = '<li>Erro ao carregar projetos.</li>';
+            });
+    </script>
 </body>
 </html>
