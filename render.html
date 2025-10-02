@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renderização de Projetos</title>
+    <link rel="stylesheet" href="/src/css/render.css">
+</head>
+
+<body>
+    <li><a href="index.html">Voltar para o Portfólio</a></li>
+    <h1>Renderização de Projetos</h1>
+    <p>Digite seu código HTML, CSS e JS abaixo:</p>
+    <textarea id="codigo">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Olá, mundo!</h1>
+</body>
+</html>
+  </textarea>
+
+    <button onclick="renderizar()">Renderizar</button>
+
+    <iframe id="preview"></iframe>
+
+    <script>
+        function renderizar() {
+            let codigo = document.getElementById("codigo").value;
+            let iframe = document.getElementById("preview").contentWindow.document;
+            iframe.open();
+            iframe.write(codigo);
+            iframe.close();
+        }
+    </script>
+</body>
+
+</html>
