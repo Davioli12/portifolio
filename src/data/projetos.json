@@ -13,5 +13,10 @@
         "nome": "Portfólio",
         "link": "https://davioli12.github.io/portifolio/",
         "descricao": "Portfólio"
+    },
+    {
+        "nome": "Pagina Emerson Eletricista",
+        "link": "https://davioli12.github.io/Eletricista/",
+        "descricao": "Pagina Emerson Eletricista"
     }
 ]
