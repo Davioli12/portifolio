@@ -18,9 +18,7 @@ Este é o site de portfólio pessoal do Davi, desenvolvido em HTML e CSS, com um
 ## Estrutura de arquivos
 
 - `index.html` — Página principal do portfólio.
-- `render.html` — Página para renderização de projetos.
 - `src/css/index.css` — Estilos da página principal.
-- `src/css/render.css` — Estilos da página de renderização.
 
 ## Contato
 
