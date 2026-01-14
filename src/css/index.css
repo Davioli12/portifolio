@@ -66,6 +66,12 @@ main {
 
 .sobre-mim {
     margin-bottom: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    text-align: center;
 }
 
 .sobre-mim h2 {
