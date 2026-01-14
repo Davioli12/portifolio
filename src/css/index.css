@@ -199,3 +199,18 @@ footer {
     width: 30px;
     height: 30px;
 }
+
+.qr-code {
+    width: 130px;
+    height: auto;
+    margin-right: 8px;
+}
+
+.inicio-center {
+    text-align: center;
+}
+
+.inicio-qr-center {
+    text-align: center;
+    color: #e94560;
+}
