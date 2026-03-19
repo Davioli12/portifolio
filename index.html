@@ -1,106 +1,110 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portifolio</title>
-    <link rel="stylesheet" href="./src/css/index.css">
-    <link rel="stylesheet" href="./src/css/bg.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Davi de Oliveira, desenvolvedor Full Stack especializado em React." />
+
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="src/css/style.css">
+
+    <title>Portfólio Davi de Oliveira - Desenvolvedor Full Stack</title>
 </head>
 
 <body>
-    <div class='background-orb orb-1'></div>
-    <div class='background-orb orb-2'></div>
-    <div class='background-orb orb-3'></div>
-    <div class='background-orb orb-4'></div>
-    <div class='background-orb orb-5'></div>
-    <div class="inicio">
-        <div class="inicio-qr-center">
-            <p>Qr-code Portifolio</p>
-            <img src="./src/img/davi_oliveira_qr.png" alt="QrCode-portifolio" class="qr-code">
-        </div>
-        <div class="inicio-center">
-            <img src="./src/img/user.png" alt="" onerror="this.style.display='none'" class="user-icon">
 
-            <div class="inicio-text">
-                <h1>Portifolio Davi</h1>
-                <p>Bem vindo ao meu portifolio, <strong>Davi</strong>.</p>
-            </div>
-        </div>
+    <header>
+        <nav>
+            <ul class="ul-header">
+                <li><a href="#sobre-mim">Sobre</a></li>
+                <li><a href="#meus-projetos">Projetos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <ul>
-            <li><a href="https://github.com/Davioli12" target="_blank">GitHub</a></li>
-            <li><a href="mailto:dsve367@gmail.com" target="_blank">Email</a></li>
-            <li><a href="https://wa.me/553597567963?text=Ol%C3%A1%2C%20Davi!%0AEncontrei%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto%20de%20desenvolvimento%20web.%0APodemos%20definir%20a%20arquitetura%20do%20sistema%2C%20stack%20tecnol%C3%B3gica%20e%20estrutura%20do%20servidor%3F
-" target="_blank">Contato</a></li>
-        </ul>
-    </div>
     <main>
-        <section class="sobre-mim">
+        <section id="sobre-mim" class="sobre-mim">
+            <h1>Davi de Oliveira</h1>
+            <img src="img/user.png" alt="Moldura para Foto" />
+            <h2>Desenvolvedor Full Stack</h2>
 
-            <h2>Sobre Mim</h2>
-            <p>
-                Olá, sou o <strong>Davi</strong>, um programador aprendiz em html, css e python.<br>
-                Transformo ideias em experiências digitais funcionais e criativas.
-                Aprimoro minhas habilidades em HTML, CSS e Python, construindo projetos que demonstram lógica, estética
-                e desempenho.
+            <p>Sou um desenvolvedor Full Stack com conhecimento em HTML, CSS, JS e Python3.
+                Transformo ideias em experiências digitais funcionais e criativas. Aprimoro minhas habilidades em HTML, CSS e Python, construindo projetos que demonstram lógica, estética e desempenho.
             </p>
+
         </section>
-        <section class="projetos-list">
-            <ul class="projeto" id="lista-projetos">
-                <!-- Projetos serão carregados via JS -->
+
+        <section id="habilidades" class="habilidades">
+            <h3>Minhas habilidades</h3>
+            <ul class="ul-habilit">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>PYTHON 3+</li>
             </ul>
         </section>
-        <section class="linguagens">
-            <h2>Linguagens que estou aprendendo</h2>
-            <ul>
-                <li>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"
-                        width="24" height="24">
-                    HTML
-                </li>
-                <li>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"
-                        width="24" height="24">
-                    CSS
-                </li>
-                <li>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                        alt="Python" width="24" height="24">
-                    Python
-                </li>
-            </ul>
+
+        <section id="objetivos" class="objetivos">
+            <h3 class="title">Meus objetivos de carreira</h3>
+            <ol>
+                <li>Dominar Python Avançado e JavaScript</li>
+                <li>Conseguir uma vaga em uma empresa de tecnologia</li>
+                <li>Criar meu primeiro SAAS e PAAS</li>
+                <li>Ajudar outros desenvolvedores a aprender programação</li>
+            </ol>
+        </section>
+
+        <section id="meus-projetos" class="meus-projetos">
+            <h3 class="title">Meus Projetos</h3>
+            <div class="projetos-grid">
+                <div class="projeto">
+                    <h3>Android Tools</h3>
+                    <a href="https://drive.google.com/file/d/1mpc5GiRYTJPaCZ2LBvLQMHzu6PTJaE5g/view" target="_blank">
+                        <img class="img-projeto" src="https://portifoliododev.web.app/img/androidtools.png"
+                            alt="Aplicativo ADB e scrcpy chamado: Android Tools" />
+                        <p class="links-project">Baixar</p>
+                    </a>
+                    <p class="description-project">Aplicativo para pc usar <a
+                            href="https://developer.android.com/tools/adb?hl=pt-br">ADB</a> e <a
+                            href="https://github.com/Genymobile/scrcpy">scrcpy</a> de forma simplificada e faciel,
+                        podendo controlar varios dispositivos Android diretamente do computador.</p>
+                </div>
+                <div class="projeto">
+                    <h3>Perfil GitHub</h3>
+                    <a href="https://github.com/davioli12" target="_blank">
+                        <img class="img-projeto" src="img/github.png" alt="Perfil do GitHub" />
+                        <p class="links-project">Acessar</p>
+                    </a>
+                    <p class="description-project">Perfil do GitHub com os repositórios públicos.</p>
+                </div>
+            </div>
+            <h2 class="title">Repositorios do GitHub</h2>
+            <section class="projeto-section">
+                <div id="projetos-github" class="projetos-github"></div>
+            </section>
         </section>
     </main>
+
     <footer>
-        <div class="contatos">
-            <h4>Contatos:</h4>
-            <p>Email: <a href="mailto:dsve367@gmail.com" target="_blank" rel="noopener noreferrer">dsve367@gmail.com</a>
-            </p>
-            <p>GitHub: <a href="http://github.com/Davioli12" target="_blank" rel="noopener noreferrer">Davioli12</a></p>
-            <p class="message">"Transformando café em código desde... sempre ☕"</p>
-        </div>
+        <section id="redes">
+            <p>© 2026 Davi de Oliveira. Todos os direitos reservados.</p>
+            <h3>Links úteis:</h3>
+
+            <p>Acesse o <a class="link-footer"  href="https://davioli12.github.io/portifolio" target="_blank">GitHub</a></p>
+
+        </section>
+        <section id="contato">
+            <h3>Meus contatos</h3>
+
+            <p>Me envie um <a class="link-footer"  href="mailto:dsve367@gmail.com">e-mail</a></p>
+            <p>Ligue pra mim em <a class="link-footer"  href="tel:+5535997567963">35 99756-7963</a></p>
+        </section>
     </footer>
-    <script>
-        fetch('./src/data/projetos.json')
-            .then(response => response.json())
-            .then(projetos => {
-                const lista = document.getElementById('lista-projetos');
-                projetos.forEach(proj => {
-                    const li = document.createElement('li');
-                    li.className = 'projetos';
-                    li.innerHTML = `
-                        <h3>${proj.nome}</h3>
-                        <p>Link do projeto: <a href="${proj.link}" target="_blank">${proj.descricao}</a></p>
-                    `;
-                    lista.appendChild(li);
-                });
-            })
-            .catch(err => {
-                document.getElementById('lista-projetos').innerHTML = '<li>Erro ao carregar projetos.</li>';
-            });
-    </script>
+    <script src="src/js/script.js"></script>
 </body>
 
 </html>
