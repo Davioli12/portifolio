@@ -5,15 +5,12 @@ Este é o site de portfólio pessoal do Davi, desenvolvido em HTML e CSS, com um
 ## Funcionalidades
 
 - **Página principal:** Apresentação, informações sobre mim, projetos e contatos.
-- **Renderização de Projetos:** Permite digitar e visualizar código HTML, CSS e JS diretamente no navegador, facilitando testes rápidos e demonstrações.
+- **Visualização de Certificados:** Permite visualizar os certificados expostos e adquiridos por: [Davi de Oliveira Santos](https://davioli12.github.io/portifolio)
 
 ## Como usar
 
 1. **Abrir o site:** Basta acessar o arquivo `index.html` em seu navegador.
-2. **Renderizar projetos:**  
-   - Clique em "Renderização de Projetos" no menu.
-   - Digite ou cole seu código HTML, CSS e JS na área de texto.
-   - Clique em **Renderizar** para visualizar o resultado no iframe abaixo.
+2. **Meus Certificados:** Basta acessar o `certificados.html` em seu navegador
 
 ## Estrutura de arquivos
 
