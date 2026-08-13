@@ -36,12 +36,17 @@ const CACHE_KEY =
 Usuário GitHub
 */
 
+hostname = '.github.io'
 site = window.location.hostname;
 
-console.log("site:", site);
+is_hostname = site.endsWith(hostname);
 
-const GITHUB_USER =
-    "davioli12";
+profile = site.endsWith(hostname) ? site.split('.')[0] : site;
+profile_alt = 'davioli12';
+
+const GITHUB_USER = (is_hostname ? profile : profile_alt);
+
+console.log('GitHub User:', GITHUB_USER, 'use profile:', profile, 'use profile_alt:', profile_alt);
 
 
 /*
