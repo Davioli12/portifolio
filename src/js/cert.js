@@ -14,7 +14,7 @@ if (container) {
         const div = document.createElement("div");
         div.classList.add("cert-card");
 
-        // cria elementos separados (melhor prática que innerHTML)
+        // cria elementos separados 
         const titulo = document.createElement("h3");
         titulo.textContent = cert.titulo;
 

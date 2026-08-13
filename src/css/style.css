@@ -1,7 +1,7 @@
 :root  {
     /* Fundo */
-    --background-color: #161b22;
-    --background-color-full: #0d1117;
+    --background-color: #101b2b;
+    --background-color-full: #26303f;
 
     /* Destaque */
     --hover-color: #58a6ff;
@@ -78,6 +78,7 @@ main {
 }
 
 .sobre-mim img {
+    background-color: #26303f;
     max-width: 200px;
     border-radius: 50%;
     margin: 20px 0;
@@ -85,7 +86,25 @@ main {
 
 /* ===== LISTAS ===== */
 .ul-habilit {
+    display: flex;
+    flex-wrap: wrap;
     margin-left: 20px;
+}
+
+.ul-habilit li {
+    margin-bottom: 5px;
+    list-style: none;
+    color: var(--text-color);
+    background-color: var(--background-color-full);
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.ul-habilit li:hover {
+    background-color: var(--hover-color);
+    color: var(--text-color);
+    transform: translateY(-2px);
+    transition: 0.3s;
 }
 
 .objetivos ol {

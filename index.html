@@ -9,6 +9,9 @@
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
 
     <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/themes.css">
+
+    <script src="./src/js/theme.js" defer></script>
 
     <title>Portfólio Davi de Oliveira - Desenvolvedor Full Stack</title>
 </head>
@@ -23,6 +26,9 @@
                 <li><a href="#meus-projetos">Projetos</a></li>
                 <li><a href="#habilidades">Habilidades</a></li>
                 <li><a href="#contato">Contato</a></li>
+                <button onclick="toggleTheme()">
+                    Alternar Tema
+                </button>
             </ul>
         </nav>
     </header>
@@ -34,7 +40,8 @@
             <h2>Desenvolvedor Full Stack</h2>
 
             <p>Sou um desenvolvedor Full Stack com conhecimento em HTML, CSS, JS e Python3.
-                Transformo ideias em experiências digitais funcionais e criativas. Aprimoro minhas habilidades em HTML, CSS e Python, construindo projetos que demonstram lógica, estética e desempenho.
+                Transformo ideias em experiências digitais funcionais e criativas. Aprimoro minhas habilidades em HTML,
+                CSS e Python, construindo projetos que demonstram lógica, estética e desempenho.
             </p>
 
         </section>
@@ -45,15 +52,17 @@
                 <li>HTML5</li>
                 <li>CSS3</li>
                 <li>JavaScript</li>
-                <li>PYTHON 3+</li>
+                <li>Python 3+</li>
+
             </ul>
         </section>
 
         <section id="objetivos" class="objetivos">
             <h3 class="title">Meus objetivos de carreira</h3>
             <ol>
-                <li>Dominar Python Avançado e JavaScript</li>
+                <li>Dominar Python Avançado</li>
                 <li>Conseguir uma vaga em uma empresa de tecnologia</li>
+                <li>Gerenciar um servidor proprio</li>
                 <li>Criar meu primeiro SAAS e PAAS</li>
                 <li>Ajudar outros desenvolvedores a aprender programação</li>
             </ol>
@@ -84,9 +93,14 @@
                 </div>
             </div>
             <h2 class="title">Repositorios do GitHub</h2>
-            <section class="projeto-section">
-                <div id="projetos-github" class="projetos-github"></div>
-            </section>
+            <div class="input-bar">
+
+                <input type="search" id="search" placeholder="Pesquisar projetos...">
+
+                <button type="button" id="clear-cache-btn">Apagar Cache</button>
+
+            </div>
+            <div class="projects" id="projects"></div>
         </section>
     </main>
 
@@ -95,14 +109,15 @@
             <p>© 2026 Davi de Oliveira. Todos os direitos reservados.</p>
             <h3>Links úteis:</h3>
 
-            <p>Acesse o <a class="link-footer"  href="https://davioli12.github.io/portifolio" target="_blank">GitHub</a></p>
+            <p>Acesse o <a class="link-footer" href="https://davioli12.github.io/portifolio" target="_blank">GitHub</a>
+            </p>
 
         </section>
         <section id="contato">
             <h3>Meus contatos</h3>
 
-            <p>Me envie um <a class="link-footer"  href="mailto:dsve367@gmail.com">e-mail</a></p>
-            <p>Ligue pra mim em <a class="link-footer"  href="tel:+5535997567963">35 99756-7963</a></p>
+            <p>Me envie um <a class="link-footer" href="mailto:dsve367@gmail.com">e-mail</a></p>
+            <p>Ligue pra mim em <a class="link-footer" href="tel:+5535997567963">35 99756-7963</a></p>
         </section>
     </footer>
     <script src="src/js/script.js"></script>

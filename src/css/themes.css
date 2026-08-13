@@ -1,0 +1,201 @@
+/*
+========================================
+TEMA DARK
+========================================
+*/
+
+:root {
+
+    --bg-color: #020817;
+
+    --header-color: #1e293b;
+
+    --card-color: #1e293b;
+
+    --text-color: #f8fafc;
+
+    --secondary-text: #94a3b8;
+
+    --input-bg: #0f172a;
+
+    --border-color: #334155;
+
+    --accent-color: #3b82f6;
+
+    --button-bg: #2563eb;
+
+    --button-text: #ffffff;
+}
+
+
+/*
+========================================
+TEMA LIGHT
+========================================
+*/
+
+body.light-theme {
+
+    --bg-color: #f1f5f9;
+
+    --header-color: #ffffff;
+
+    --card-color: #ffffff;
+
+    --text-color: #0f172a;
+
+    --secondary-text: #475569;
+
+    --input-bg: #ffffff;
+
+    --border-color: #cbd5e1;
+
+    --accent-color: #2563eb;
+
+    --button-bg: #2563eb;
+
+    --button-text: #ffffff;
+}
+
+
+/*
+========================================
+GLOBAL
+========================================
+*/
+
+* {
+
+    transition:
+        background 0.3s,
+        color 0.3s,
+        border-color 0.3s;
+}
+
+
+body {
+
+    background:
+        var(--bg-color);
+
+    color:
+        var(--text-color);
+}
+
+
+/*
+========================================
+HEADER
+========================================
+*/
+
+header {
+
+    background:
+        var(--header-color);
+
+    color:
+        var(--text-color);
+}
+
+
+/*
+========================================
+CARDS
+========================================
+*/
+
+.project,
+.present {
+
+    background:
+        var(--card-color);
+
+    border:
+        1px solid var(--border-color);
+
+    color:
+        var(--text-color);
+}
+
+
+/*
+========================================
+TEXTOS
+========================================
+*/
+
+p {
+
+    color:
+        var(--secondary-text);
+}
+
+
+h1,
+h2,
+h3 {
+
+    color:
+        var(--text-color);
+}
+
+
+/*
+========================================
+INPUT
+========================================
+*/
+
+input {
+
+    background:
+        var(--input-bg);
+
+    color:
+        var(--text-color);
+
+    border:
+        1px solid var(--border-color);
+}
+
+
+/*
+========================================
+BOTÕES
+========================================
+*/
+
+button {
+
+    background:
+        var(--button-bg);
+
+    color:
+        var(--button-text);
+
+    border:
+        none;
+
+    padding:
+        10px 16px;
+
+    border-radius:
+        8px;
+
+    cursor:
+        pointer;
+}
+
+
+/*
+========================================
+LINKS
+========================================
+*/
+
+a {
+
+    color:
+        var(--accent-color);
+}
