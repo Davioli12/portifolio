@@ -1,0 +1,71 @@
+[
+    {
+        "repo": "exemplo-projeto-1",
+        "nome": "Exemplo Projeto 1",
+        "descricao": "Descrição do projeto customizado 1",
+        "imagem": "https://via.placeholder.com/300x150?text=Projeto+1",
+        "destaque": true,
+        "linguagem": "JavaScript",
+        "link": "https://github.com/seu-usuario/exemplo-projeto-1",
+        "stars": 57,
+        "forks": 34,
+        "atualizado": "2026-08-13",
+        "view": false
+    },
+    {
+        "repo": "portifolio",
+        "nome": "Portifólio",
+        "descricao": "Meu portifólio pessoal, onde apresento meus projetos e habilidades.",
+        "destaque": true,
+        "linguagem": "HTML/CSS/JS",
+        "link": "https://davioli12.github.io/portifolio/"
+    },
+    {
+        "repo": "IA-background",
+        "nome": "IA Background",
+        "descricao": "Projeto de IA para geração de fundos de sites.",
+        "destaque": true,
+        "linguagem": "HTML/CSS/JS",
+        "link": "https://github.com/davioli12/IA-background/"
+    },
+    {
+        "repo": "games",
+        "nome": "Jogos HTML/CSS/JS",
+        "descricao": "Coleção de jogos desenvolvidos com HTML, CSS e JavaScript.",
+        "destaque": true,
+        "linguagem": "HTML/CSS/JS",
+        "link": "https://davioli12.github.io/games/"
+    },
+    {
+        "repo": "pages",
+        "descricao": "Pagina de pesquisa de projetos do usuario",
+        "view": false,
+        "link": "https://davioli12.github.io/pages/"
+    },
+    {
+        "repo": "VolanteApp",
+        "nome": "Volante app",
+        "descricao": "Aplicativo para simulador usando python e arduino. (Descontinuado)",
+        "linguagem": "Python"
+    },
+    {
+        "repo": "Eletricista",
+        "nome": "Força e Luz -- Eletricista",
+        "descricao": "Site para atendimento ao cliente em energia, serviços elétricos, manutenção e atendimento ao cliente.",
+        "link": "https://davioli12.github.io/Eletricista"
+    },
+    {
+        "repo": "Lembrancas-Aurora",
+        "nome": "As Lembranças de Aurora",
+        "descricao": "",
+        "link": "https://davioli12.github.io/Lembrancas-Aurora"
+    },
+    {
+        "repo": "Davioli12",
+        "view": false
+    },
+    {
+        "repo": "updater",
+        "view": false
+    }
+]

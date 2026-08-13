@@ -1,35 +1,5 @@
 /*
 ========================================
-TEMA DARK
-========================================
-*/
-
-:root {
-
-    --bg-color: #020817;
-
-    --header-color: #1e293b;
-
-    --card-color: #1e293b;
-
-    --text-color: #f8fafc;
-
-    --secondary-text: #94a3b8;
-
-    --input-bg: #0f172a;
-
-    --border-color: #334155;
-
-    --accent-color: #3b82f6;
-
-    --button-bg: #2563eb;
-
-    --button-text: #ffffff;
-}
-
-
-/*
-========================================
 TEMA LIGHT
 ========================================
 */
@@ -37,23 +7,29 @@ TEMA LIGHT
 body.light-theme {
 
     --bg-color: #f1f5f9;
+    --background-color: #f1f5f9;
+    --background-color-full: #e2e8f0;
 
     --header-color: #ffffff;
+    --background-color: #ffffff;
 
     --card-color: #ffffff;
-
     --text-color: #0f172a;
+    --background-color-full: #e2e8f0;
 
     --secondary-text: #475569;
+    --text-secondary: #475569;
 
     --input-bg: #ffffff;
+    --background-color: #ffffff;
 
     --border-color: #cbd5e1;
 
     --accent-color: #2563eb;
+    --hover-color: #2563eb;
+    --hover-color-fort: #1d4ed8;
 
     --button-bg: #2563eb;
-
     --button-text: #ffffff;
 }
 

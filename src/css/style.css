@@ -13,6 +13,16 @@
 
     /* Bordas */
     --border-color: #30363d;
+
+    /* Tema variáveis adicionais */
+    --bg-color: #101b2b;
+    --header-color: #101b2b;
+    --card-color: #26303f;
+    --secondary-text: #8b949e;
+    --input-bg: #101b2b;
+    --accent-color: #58a6ff;
+    --button-bg: #1f6feb;
+    --button-text: #e6edf3;
 }
 
 /* ===== BODY ===== */
@@ -111,9 +121,28 @@ main {
     margin-left: 20px;
 }
 
+/* ===== Input Repos ===== */
+.input-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.input-bar input[type="search"] {
+    padding: 8px;
+    height: 36px;
+    width: 300px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
 /* ===== GRID DOS REPOS ===== */
 .projetos-github,
-.projetos-grid {
+.projetos-grid,
+#projects {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -139,6 +168,71 @@ main {
 .projeto:hover {
     background: #21262d;
     transform: translateY(-5px);
+}
+
+/* Estilo para cards dinâmicos */
+.project {
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-height: 220px;
+    transition: 0.3s;
+}
+
+.project:hover {
+    background: #21262d;
+    transform: translateY(-5px);
+}
+
+.project a {
+    color: var(--hover-color);
+    text-decoration: none;
+    padding: 8px 12px;
+    border: 1px solid var(--hover-color);
+    border-radius: 5px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.project a:hover {
+    background-color: var(--hover-color);
+    color: var(--background-color);
+}
+
+.project-description {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.project-image {
+    max-width: 100%;
+    max-height: 120px;
+    object-fit: contain;
+    margin: 10px auto;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.project-image:hover {
+    transform: scale(1.1);
+}
+
+/* Projeto em destaque */
+.project.featured {
+    border: 2px solid var(--hover-color);
+    background: rgba(88, 166, 255, 0.05);
+}
+
+.project.featured:hover {
+    background: rgba(88, 166, 255, 0.1);
 }
 
 /* ===== TEXTOS ===== */

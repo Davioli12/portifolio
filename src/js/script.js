@@ -36,13 +36,12 @@ const CACHE_KEY =
 Usuário GitHub
 */
 
-hostname = '.github.io'
-site = window.location.hostname;
+const hostname = '.github.io';
+const profile_alt = 'davioli12';
 
-is_hostname = site.endsWith(hostname);
-
-profile = site.endsWith(hostname) ? site.split('.')[0] : site;
-profile_alt = 'davioli12';
+const site = window.location.hostname;
+const is_hostname = site.endsWith(hostname);
+const profile = site.endsWith(hostname) ? site.split('.')[0] : site;
 
 const GITHUB_USER = (is_hostname ? profile : profile_alt);
 
@@ -55,63 +54,65 @@ PESQUISA
 ========================================
 */
 
-searchInput.addEventListener(
-    "input",
+if (searchInput) {
+    searchInput.addEventListener(
+        "input",
 
-    function () {
-
-        /*
-        Texto digitado
-        */
-        const term =
-            this.value.toLowerCase();
-
-        /*
-        Captura cards
-        */
-        const projectCards =
-            document.querySelectorAll(".project");
-
-        /*
-        Percorre cards
-        */
-        projectCards.forEach((card) => {
+        function () {
 
             /*
-            Nome
+            Texto digitado
             */
-            const title =
-                card.querySelector("h2")
-                    .textContent
-                    .toLowerCase();
+            const term =
+                this.value.toLowerCase();
 
             /*
-            Descrição
+            Captura cards
             */
-            const description =
-                card.querySelector(".project-description")
-                    .textContent
-                    .toLowerCase();
+            const projectCards =
+                document.querySelectorAll(".project");
 
             /*
-            Verifica pesquisa
+            Percorre cards
             */
-            if (
-                title.includes(term) ||
-                description.includes(term)
-            ) {
+            projectCards.forEach((card) => {
 
-                card.style.display =
-                    "block";
+                /*
+                Nome
+                */
+                const title =
+                    card.querySelector("h2")
+                        .textContent
+                        .toLowerCase();
 
-            } else {
+                /*
+                Descrição
+                */
+                const description =
+                    card.querySelector(".project-description")
+                        .textContent
+                        .toLowerCase();
 
-                card.style.display =
-                    "none";
-            }
-        });
-    }
-);
+                /*
+                Verifica pesquisa
+                */
+                if (
+                    title.includes(term) ||
+                    description.includes(term)
+                ) {
+
+                    card.style.display =
+                        "block";
+
+                } else {
+
+                    card.style.display =
+                        "none";
+                }
+            });
+        }
+    );
+}
 
 
 /*
@@ -357,180 +358,179 @@ async function carregarProjetos() {
                 console.error("Erro ao processar projeto:", error);
 
             }
+        }
 
+
+        /*
+        ========================================
+        ADICIONA PROJETOS
+        APENAS DO JSON
+        ========================================
+        */
+
+        for (const projeto of projectsData) {
 
             /*
-            ========================================
-            ADICIONA PROJETOS
-            APENAS DO JSON
-            ========================================
+            Ignora ocultos
             */
+            if (
+                projeto.view === false
+            ) {
+                continue;
+            }
 
-            for (const projeto of projectsData) {
+            /*
+            Verifica se já existe
+            */
+            const alreadyExists =
+                projetos.some(
+                    (item) =>
 
-                /*
-                Ignora ocultos
-                */
-                if (
-                    projeto.view === false
-                ) {
-                    continue;
-                }
+                        item.repo
+                            .toLowerCase() ===
 
-                /*
-                Verifica se já existe
-                */
-                const alreadyExists =
-                    projetos.some(
-                        (item) =>
+                        projeto.repo
+                            .toLowerCase()
+                );
 
-                            item.repo
-                                .toLowerCase() ===
-
-                            projeto.repo
-                                .toLowerCase()
-                    );
-
-                /*
-                Se já existir
-                */
-                if (alreadyExists) {
-                    continue;
-                }
-
-
-                /*
-                Cria projeto manual
-                */
-                projetos.push({
-
-                    repo:
-                        projeto.repo ||
-
-                        "manual-project",
-
-                    nome:
-                        projeto.nome ||
-
-                        projeto.repo ||
-
-                        "Projeto sem nome",
-
-                    descricao:
-                        projeto.descricao ||
-
-                        "Sem descrição",
-
-                    imagem:
-                        projeto.imagem ||
-
-                        null,
-
-                    destaque:
-                        projeto.destaque ||
-
-                        false,
-
-                    linguagem:
-                        projeto.linguagem ||
-
-                        "N/A",
-
-                    link:
-                        projeto.link ||
-
-                        "#",
-
-                    stars:
-                        projeto.stars ??
-
-                        0,
-
-                    forks:
-                        projeto.forks ??
-
-                        0,
-
-                    atualizado:
-                        projeto.atualizado ||
-
-                        null
-                });
+            /*
+            Se já existir
+            */
+            if (alreadyExists) {
+                continue;
             }
 
 
             /*
-            ========================================
-            ORDENA PROJETOS
-            ========================================
+            Cria projeto manual
             */
+            projetos.push({
 
-            projetos.sort((a, b) => {
+                repo:
+                    projeto.repo ||
 
-                /*
-                Destaques primeiro
-                */
-                if (
-                    a.destaque &&
-                    !b.destaque
-                ) {
-                    return -1;
-                }
+                    "manual-project",
 
-                if (
-                    !a.destaque &&
-                    b.destaque
-                ) {
-                    return 1;
-                }
+                nome:
+                    projeto.nome ||
 
-                /*
-                Mais estrelas primeiro
-                */
-                return (
-                    b.stars - a.stars
-                );
+                    projeto.repo ||
+
+                    "Projeto sem nome",
+
+                descricao:
+                    projeto.descricao ||
+
+                    "Sem descrição",
+
+                imagem:
+                    projeto.imagem ||
+
+                    null,
+
+                destaque:
+                    projeto.destaque ||
+
+                    false,
+
+                linguagem:
+                    projeto.linguagem ||
+
+                    "N/A",
+
+                link:
+                    projeto.link ||
+
+                    "#",
+
+                stars:
+                    projeto.stars ??
+
+                    0,
+
+                forks:
+                    projeto.forks ??
+
+                    0,
+
+                atualizado:
+                    projeto.atualizado ||
+
+                    null
             });
-
-
-            /*
-            ========================================
-            SALVA CACHE
-            ========================================
-            */
-
-            localStorage.setItem(
-
-                CACHE_KEY,
-
-                JSON.stringify({
-
-                    timestamp:
-                        Date.now(),
-
-                    data:
-                        projetos
-                })
-            );
-
-
-            /*
-            ========================================
-            RENDERIZA
-            ========================================
-            */
-
-            renderizarProjetos(
-                projetos
-            );
         }
-    } catch (error) {
 
-        console.error(
-            "Erro ao carregar projetos:",
-            error
+
+        /*
+        ========================================
+        ORDENA PROJETOS
+        ========================================
+        */
+
+    projetos.sort((a, b) => {
+
+        /*
+        Destaques primeiro
+        */
+        if (
+            a.destaque &&
+            !b.destaque
+        ) {
+            return -1;
+        }
+
+        if (
+            !a.destaque &&
+            b.destaque
+        ) {
+            return 1;
+        }
+
+        /*
+        Mais estrelas primeiro
+        */
+        return (
+            b.stars - a.stars
         );
-    }
+    });
+
+
+    /*
+    ========================================
+    SALVA CACHE
+    ========================================
+    */
+
+    localStorage.setItem(
+
+        CACHE_KEY,
+
+        JSON.stringify({
+
+            timestamp:
+                Date.now(),
+
+            data:
+                projetos
+        })
+    );
+
+
+    /*
+    ========================================
+    RENDERIZA
+    ========================================
+    */
+
+    renderizarProjetos(
+        projetos
+    );
+} catch (error) {
+
+    console.error(
+        "Erro ao carregar projetos:",
+        error
+    );
 }
 
 
@@ -541,6 +541,14 @@ RENDERIZAÇÃO
 */
 
 function renderizarProjetos(projetos) {
+
+    /*
+    Verifica se container existe
+    */
+    if (!projectsContainer) {
+        console.error("Container #projects não encontrado!");
+        return;
+    }
 
     /*
     Limpa container
@@ -649,32 +657,34 @@ LIMPAR CACHE
 ========================================
 */
 
-clearCacheBtn.addEventListener(
+if (clearCacheBtn) {
+    clearCacheBtn.addEventListener(
 
-    "click",
+        "click",
 
-    () => {
+        () => {
 
-        /*
-        Remove cache
-        */
-        localStorage.removeItem(
-            CACHE_KEY
-        );
+            /*
+            Remove cache
+            */
+            localStorage.removeItem(
+                CACHE_KEY
+            );
 
-        /*
-        Feedback
-        */
-        alert(
-            "Cache apagado!"
-        );
+            /*
+            Feedback
+            */
+            alert(
+                "Cache apagado!"
+            );
 
-        /*
-        Recarrega página
-        */
-        location.reload();
-    }
-);
+            /*
+            Recarrega página
+            */
+            location.reload();
+        }
+    );
+}
 
 
 /*
@@ -683,4 +693,175 @@ INICIA SISTEMA
 ========================================
 */
 
-carregarProjetos();
+if (projectsContainer) {
+    carregarProjetos();
+} else {
+    console.warn("Container #projects não encontrado. Projetos não serão carregados.");
+}
+}
+
+
+/*
+========================================
+RENDERIZAÇÃO
+========================================
+*/
+
+function renderizarProjetos(projetos) {
+
+    /*
+    Verifica se container existe
+    */
+    if (!projectsContainer) {
+        console.error("Container #projects não encontrado!");
+        return;
+    }
+
+    /*
+    Limpa container
+    */
+    projectsContainer.innerHTML =
+        "";
+
+
+    /*
+    Percorre projetos
+    */
+    projetos.forEach((projeto) => {
+
+        /*
+        Cria card
+        */
+        const card =
+            document.createElement(
+                "section"
+            );
+
+        /*
+        Classe CSS
+        */
+        card.className =
+            "project";
+
+
+        /*
+        Destaque
+        */
+        if (projeto.destaque) {
+
+            card.classList.add(
+                "featured"
+            );
+        }
+
+
+        /*
+        Imagem opcional
+        */
+        const imageHTML =
+            projeto.imagem
+
+                ? `
+                    <img
+                        src="${projeto.imagem}"
+                        alt="${projeto.nome}"
+                        class="project-image"
+                    >
+                  `
+
+                : "";
+
+
+        /*
+        HTML do card
+        */
+        card.innerHTML = `
+
+            ${imageHTML}
+
+            <h2>
+                ${projeto.nome}
+            </h2>
+
+            <p class="project-description">
+                ${projeto.descricao}
+            </p>
+
+            <p>
+                💻 ${projeto.linguagem}
+            </p>
+
+            <p>
+                ⭐ ${projeto.stars}
+            </p>
+
+            <p>
+                🍴 ${projeto.forks}
+            </p>
+
+            <a
+                href="${projeto.link}"
+                target="_blank"
+            >
+                Abrir Projeto
+            </a>
+        `;
+
+
+        /*
+        Adiciona card
+        */
+        projectsContainer.appendChild(
+            card
+        );
+    });
+}
+
+
+/*
+========================================
+LIMPAR CACHE
+========================================
+*/
+
+if (clearCacheBtn) {
+    clearCacheBtn.addEventListener(
+
+        "click",
+
+        () => {
+
+            /*
+            Remove cache
+            */
+            localStorage.removeItem(
+                CACHE_KEY
+            );
+
+            /*
+            Feedback
+            */
+            alert(
+                "Cache apagado!"
+            );
+
+            /*
+            Recarrega página
+            */
+            location.reload();
+        }
+    );
+}
+
+
+/*
+========================================
+INICIA SISTEMA
+========================================
+*/
+
+if (projectsContainer) {
+    carregarProjetos();
+} else {
+    console.warn("Container #projects não encontrado. Projetos não serão carregados.");
+}
