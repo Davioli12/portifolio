@@ -262,6 +262,7 @@ main {
 
 .links-project {
     margin-top: 10px;
+    color: var(--button-bg)
 }
 
 /* ===== IMAGEM ===== */
